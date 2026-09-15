@@ -1,0 +1,94 @@
+﻿@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top, rgba(176, 154, 99, 0.18), transparent 24%),
+    radial-gradient(circle at 80% 10%, rgba(53, 92, 90, 0.16), transparent 26%),
+    #eef3f2;
+  color: #102228;
+  font-family: "Inter", "Noto Sans SC", "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button, input {
+  font: inherit;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(53, 92, 90, 0.22);
+  border-radius: 999px;
+}
+
+.grid-lines {
+  background-image:
+    linear-gradient(rgba(183, 198, 194, 0.18) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(183, 198, 194, 0.18) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.flow-line {
+  position: absolute;
+  height: 1px;
+  transform-origin: left center;
+  background: linear-gradient(90deg, rgba(176, 154, 99, 0.1), rgba(53, 92, 90, 0.55), rgba(176, 154, 99, 0.1));
+}
+
+.flow-line::after {
+  content: "";
+  position: absolute;
+  right: 16%;
+  top: -2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: rgba(176, 154, 99, 0.9);
+  box-shadow: 0 0 14px rgba(176, 154, 99, 0.6);
+}
+
+.timeline-bar {
+  background: linear-gradient(180deg, rgba(53, 92, 90, 0.9), rgba(96, 135, 131, 0.35));
+}
+
+.timeline-bar-active {
+  background: linear-gradient(180deg, rgba(176, 154, 99, 0.95), rgba(53, 92, 90, 0.5));
+}
+
+.geo-node-dot {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 999px;
+  box-shadow: 0 0 0 6px rgba(255, 255, 255, 0.3);
+}
+
+.geo-node-dot-primary {
+  background: rgba(53, 92, 90, 0.95);
+}
+
+.geo-node-dot-secondary {
+  background: rgba(176, 154, 99, 0.95);
+}

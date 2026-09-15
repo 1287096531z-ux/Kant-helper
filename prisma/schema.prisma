@@ -1,0 +1,86 @@
+﻿generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model Philosopher {
+  id        String   @id
+  slug      String   @unique
+  name      String
+  label     String
+  lifespan  String
+  era       String
+  overview  String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Issue {
+  id       String   @id
+  label    String
+  title    String
+  summary  String
+  weight   Int
+  termIds  String
+  pathIds  String
+}
+
+model ResearchPath {
+  id         String @id
+  issueId    String
+  label      String
+  summary    String
+  stance     String
+  scholarIds String
+  highlights String
+}
+
+model Scholar {
+  id          String @id
+  slug        String @unique
+  name        String
+  nameZh      String?
+  region      String
+  institution String
+  eraFocus    String
+  summary     String
+  biography   String
+  tags        String
+  termIds     String
+  issueIds    String
+  pathIds     String
+  workIds     String
+  geoX        Int
+  geoY        Int
+  sepUrl      String?
+}
+
+model Work {
+  id            String @id
+  title         String
+  titleZh       String?
+  year          Int
+  venue         String
+  doi           String?
+  cnkiId        String?
+  source        String
+  citationCount Int
+  authors       String
+  abstract      String
+  url           String?
+  keywords      String
+  termIds       String
+  scholarIds    String
+}
+
+model Relation {
+  id      String @id
+  source  String
+  target  String
+  type    String
+  summary String
+}

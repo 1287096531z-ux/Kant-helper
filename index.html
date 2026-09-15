@@ -1,0 +1,81 @@
+﻿<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>康德研究图谱</title>
+    <link rel="stylesheet" href="./static/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="panel left-panel">
+        <div class="eyebrow">Philosopher Research Atlas</div>
+        <h1>康德</h1>
+        <div class="subtitle">Immanuel Kant · 1724-1804</div>
+        <p class="lead">以康德为核心组织近几十年的主要研究问题、解释进路、研究者网络与代表论文，强调时间演化、全球传播与术语外链。</p>
+        <div class="metrics" id="metrics"></div>
+        <section class="mini-card">
+          <div class="section-label">数据来源层</div>
+          <div id="source-records" class="source-records"></div>
+        </section>
+      </aside>
+
+      <main class="panel center-panel">
+        <div class="center-head">
+          <div>
+            <div class="eyebrow">Questions, Paths, Time, Global Reach</div>
+            <h2>近几十年康德研究主问题云图</h2>
+          </div>
+          <div class="segmented" id="mode-switch">
+            <button data-mode="paths" class="is-active">进路</button>
+            <button data-mode="timeline">时间轴</button>
+            <button data-mode="geo">全球视野</button>
+          </div>
+        </div>
+        <div class="center-grid">
+          <section class="cloud-stage grid-lines">
+            <div class="cloud-orbit"></div>
+            <div id="issue-cloud" class="issue-cloud"></div>
+          </section>
+          <section class="detail-stage" id="detail-stage"></section>
+        </div>
+      </main>
+
+      <aside class="panel right-panel" id="scholar-panel"></aside>
+    </div>
+
+    <div class="modal hidden" id="graph-modal">
+      <div class="modal-card graph-card">
+        <div class="modal-head">
+          <div>
+            <div class="eyebrow">Network Graph</div>
+            <h3 id="graph-title">关系图谱</h3>
+          </div>
+          <button class="ghost-btn" data-close="graph-modal">关闭图谱</button>
+        </div>
+        <svg id="graph-svg" viewBox="0 0 1000 560" preserveAspectRatio="xMidYMid meet"></svg>
+      </div>
+    </div>
+
+    <div class="modal hidden" id="work-modal">
+      <div class="modal-card work-card">
+        <div class="modal-head">
+          <div>
+            <div class="eyebrow">Representative Work</div>
+            <h3 id="work-title"></h3>
+            <div class="subtitle" id="work-meta"></div>
+          </div>
+          <div class="modal-actions">
+            <button class="ghost-btn" id="work-graph-btn">论文图谱</button>
+            <button class="ghost-btn" data-close="work-modal">关闭</button>
+          </div>
+        </div>
+        <p id="work-abstract" class="work-abstract"></p>
+        <div id="work-terms" class="chip-row"></div>
+        <div class="meta-grid" id="work-source-grid"></div>
+      </div>
+    </div>
+
+    <script src="./static/app.js"></script>
+  </body>
+</html>
