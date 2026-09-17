@@ -77,5 +77,25 @@
     </div>
 
     <script src="./static/app.js"></script>
+
+    <!-- 康德研究助手 · Coze Chat SDK -->
+    <script src="https://lf-cdn.coze.cn/obj/unpkg/flow-platform/chat-app-sdk/1.2.0-beta.19/libs/cn/index.js"></script>
+    <script>
+      new CozeWebSDK.WebChatClient({
+        config: {
+          bot_id: '7686413084696969251',
+        },
+        componentProps: {
+          title: '康德研究助手',
+        },
+        auth: {
+          type: 'token',
+          token: 'pat_v3lCMgFAID2VfLmJhom295YUAaY3B6nfSQ56CPSxyDBbsgM3E8ZhdhzxE9rTbN7r',
+          onRefreshToken: function () {
+            return 'pat_v3lCMgFAID2VfLmJhom295YUAaY3B6nfSQ56CPSxyDBbsgM3E8ZhdhzxE9rTbN7r'
+          }
+        }
+      });
+    </script>
   </body>
 </html>
